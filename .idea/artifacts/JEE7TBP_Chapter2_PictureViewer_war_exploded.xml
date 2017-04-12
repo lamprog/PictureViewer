@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="JEE7TBP_Chapter2_PictureViewer:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/JEE7TBP_Chapter2_PictureViewer_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="JEE7TBP_Chapter2_PictureViewer/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="JEE7TBP_Chapter2_PictureViewer" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

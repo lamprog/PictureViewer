@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="JEE7TBP_Chapter2_PictureViewer:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/JEE7TBP_Chapter2_PictureViewer_war</output-path>
+    <root id="archive" name="JEE7TBP_Chapter2_PictureViewer_war.war">
+      <element id="artifact" artifact-name="JEE7TBP_Chapter2_PictureViewer:war exploded" />
+    </root>
+  </artifact>
+</component>
