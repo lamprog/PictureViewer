@@ -13,16 +13,18 @@ public class PhotoAlbum {
     private List<byte[]> photoDataList = new ArrayList<byte[]>();
     private List<String> names = new ArrayList<String>();
 
-    public static PhotoAlbum getPhotoAlbum(HttpSession session) {
-        if (session.getAttribute(ATTRIBUTE_NAME) == null) {
-            PhotoAlbum pa = new PhotoAlbum();
-            session.setAttribute(ATTRIBUTE_NAME, pa);
-        }
-
-        return (PhotoAlbum)session.getAttribute(ATTRIBUTE_NAME);
+    public PhotoAlbum() {
     }
 
-    public synchronized void addPhoto(String name, byte[] bytes) {
+    public void setSession(HttpSession session) {
+        session.setAttribute(ATTRIBUTE_NAME, this);
+    }
+
+    public List getPhotoNames() {
+        return names;
+    }
+
+    public void addPhoto(String name, byte[] bytes) {
         this.photoDataList.add(bytes);
         this.names.add(name);
     }
@@ -42,5 +44,9 @@ public class PhotoAlbum {
     public synchronized void removePhoto(int i) {
         photoDataList.remove(i);
         names.remove(i);
+    }
+
+    public static PhotoAlbum getPhotoAlbum(HttpSession session) {
+        return (PhotoAlbum)session.getAttribute(ATTRIBUTE_NAME);
     }
 }

@@ -23,19 +23,26 @@ public class DisplayPhotoServlet extends HttpServlet {
         throws ServletException, IOException {
 
         String indexString = request.getParameter("photo");
-        int index = (new Integer(indexString.trim())).intValue();
-        response.setContentType("image/jpeg");
-        OutputStream out = response.getOutputStream();
 
-        try {
-            HttpSession session = request.getSession();
-            PhotoAlbum pa = PhotoAlbum.getPhotoAlbum(session);
-            byte[] bytes = pa.getPhotoData(index);
-            for (int i = 0; i < bytes.length; i++) {
-                out.write(bytes[i]);
+        int index;
+        if (indexString != null) {
+            index = (new Integer(indexString.trim())).intValue();
+
+            response.setContentType("image/jpeg");
+            OutputStream out = response.getOutputStream();
+
+            try {
+                HttpSession session = request.getSession();
+                PhotoAlbum pa = PhotoAlbum.getPhotoAlbum(session);
+                byte[] bytes = pa.getPhotoData(index);
+                for (int i = 0; i < bytes.length; i++) {
+                    out.write(bytes[i]);
+                }
+            } finally {
+                out.close();
             }
-        } finally {
-            out.close();
+        } else {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
     }
 }

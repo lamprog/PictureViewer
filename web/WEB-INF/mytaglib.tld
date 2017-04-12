@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+        version="2.1">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>PhotoAlbum-TLD</short-name>
+    <uri>http://diconium.com</uri>
+    <tag>
+        <name>photo</name>
+        <tag-class>com.diconium.pictureviewer.PhotoTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>index</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>height</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>width</name>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+</taglib>
